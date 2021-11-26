@@ -22,3 +22,12 @@
 .list-deals .text-deal span {
     padding: 0 0 0 1em;
 }
+
+.list-deals .text-deal span.pvp {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.list-deals .text-deal span.pvs {
+    color: red;
+}
