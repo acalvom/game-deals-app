@@ -1,56 +1,48 @@
 import './Deals.css';
+import DealsList from "./DealsList";
 
 function DealsHome() {
 
     const deals = [
-        {title:'' , salePrice: 55, normalPrice: 22, savings: 66, steamRatingText:' ',dealRating:'', releaseDate:333333, lastChange:44444,thumb: 'https://via.placeholder.com/48'},
-        {title:'' , salePrice: 55, normalPrice: 22, savings: 66, steamRatingText:' ',dealRating:'', releaseDate:333333, lastChange:44444,thumb: 'https://via.placeholder.com/48'},
-        {title:'' , salePrice: 55, normalPrice: 22, savings: 66, steamRatingText:' ',dealRating:'', releaseDate:333333, lastChange:44444,thumb: 'https://via.placeholder.com/48'}
-    ]
+        {
+            title: 'theHunter: Call of the Wild',
+            salePrice: "0.00",
+            normalPrice: "19.99",
+            savings: "100.000000",
+            steamRatingText: "Very Positive",
+            dealRating: "10.0",
+            releaseDate: 1487203200,
+            lastChange: 1637857401,
+            thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/518790/capsule_sm_120.jpg?t=1633535581"
+        },
+        {
+            title: "Warhammer: End Times - Vermintide",
+            salePrice: "0.00",
+            normalPrice: "29.99",
+            savings: "100.000000",
+            steamRatingText: "Very Positive",
+            dealRating: "10.0",
+            releaseDate: 1445558400,
+            lastChange: 1637856842,
+            thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/235540/capsule_sm_120.jpg?t=1596795745"
+        },
+        {
+            title: "Resident Evil 5",
+            salePrice: "4.25",
+            normalPrice: "19.99",
+            savings: "78.739370",
+            steamRatingText: "Very Positive",
+            dealRating: "8.8",
+            releaseDate: 1252972800,
+            lastChange: 1637746058,
+            thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/capsule_sm_120.jpg?t=1591599188"
+        }
+    ];
 
     return (
         <div className="container-fluid">
             <h2 className="text-secondary"> Deals Home Page</h2>
-            <div className="list-deals list-group">
-                <a href="#" className="list-group-item list-group-item-action">
-                    <div className="img-deal d-none d-sm-block">
-                        <img src="https://via.placeholder.com/120" className="img-fluid" alt=""/>
-                    </div>
-                    <div className="text-deal">
-                        <div className="d-flex w-100 justify-content-between">
-                            <h5 className="mb-1">Game Title</h5>
-                            <small>3 days ago</small>
-                        </div>
-                        <div className="d-flex w-100 justify-content-end">
-                            <span>Sale Price</span>
-                            <span>Normal Price</span>
-                            <span>Discount</span>
-                        </div>
-
-                        <p className="mb-1">Deal rating - Deal text</p>
-                        <small>Release sale date</small>
-                    </div>
-                </a>
-                <a href="#" className="list-group-item list-group-item-action">
-                    <div className="img-deal d-none d-sm-block">
-                        <img src="https://via.placeholder.com/120" className="img-fluid" alt=""/>
-                    </div>
-                    <div className="text-deal">
-                        <div className="d-flex w-100 justify-content-between">
-                            <h5 className="mb-1">Game Title</h5>
-                            <small>3 days ago</small>
-                        </div>
-                        <div className="d-flex w-100 justify-content-end">
-                            <span>Sale Price</span>
-                            <span>Normal Price</span>
-                            <span>Discount</span>
-                        </div>
-
-                        <p className="mb-1">Deal rating - Deal text</p>
-                        <small>Release sale date</small>
-                    </div>
-                </a>
-            </div>
+            <DealsList deals={deals}/>
         </div>
     );
 }
