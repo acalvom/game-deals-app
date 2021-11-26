@@ -1,0 +1,20 @@
+.list-deals .list-group-item {
+    display: inline-flex;
+    margin-bottom: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 10px;
+}
+
+.list-deals .img-deal {
+    float: left;
+    margin: auto;
+}
+
+.list-deals .img-deal > img {
+    min-width: 50px;
+}
+
+.list-deals .text-deal {
+    flex: 1;
+    margin: 1em;
+}
