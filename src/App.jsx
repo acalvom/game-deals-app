@@ -1,9 +1,7 @@
-import React from 'react';
-
 const App = () => {
     return (
-        <div>
-            <h1>Game Deals App</h1>
+        <div className="container">
+            <h1 className="text-primary">Game Deals App</h1>
         </div>
     );
 };
