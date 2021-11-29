@@ -28,7 +28,8 @@ const DealsList = (props) => {
                                     <span className="pvp">{parseFloatDecimals(item.normalPrice, 2)}€</span>
                                     <span>{parseFloatDecimals(item.savings)}%</span>
                                 </div>
-                                <p className="mb-1">{item.dealRating}/10.0 - {item.steamRatingText}</p>
+                                <p className="mb-1"><i className="fas fa-award"/> {item.dealRating}/10.0
+                                    - {item.steamRatingText}</p>
                                 <small>Game release date: {msToDate(item.releaseDate)}</small>
                             </div>
                         </a>
