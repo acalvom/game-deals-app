@@ -5,6 +5,7 @@ function DealsHome() {
 
     const deals = [
         {
+            internalName: "THEHUNTERCALLOFTHEWILD",
             title: 'theHunter: Call of the Wild',
             salePrice: "0.00",
             normalPrice: "19.99",
@@ -16,6 +17,7 @@ function DealsHome() {
             thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/518790/capsule_sm_120.jpg?t=1633535581"
         },
         {
+            internalName: "WARHAMMERENDTIMESVERMINTIDE",
             title: "Warhammer: End Times - Vermintide",
             salePrice: "0.00",
             normalPrice: "29.99",
@@ -27,6 +29,7 @@ function DealsHome() {
             thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/235540/capsule_sm_120.jpg?t=1596795745"
         },
         {
+            internalName: "RESIDENTEVIL5",
             title: "Resident Evil 5",
             salePrice: "4.25",
             normalPrice: "19.99",

@@ -14,7 +14,7 @@ const DealsList = (props) => {
             {
                 deals.length > 0 ?
                     deals.map(item =>
-                        <a href="#" className="list-group-item list-group-item-action">
+                        <a key={item.internalName} href="#" className="list-group-item list-group-item-action">
                             <div className="img-deal d-none d-sm-block">
                                 <img src={item.thumb} className="img-fluid" alt={item.title}/>
                             </div>
