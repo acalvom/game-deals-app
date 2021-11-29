@@ -1,6 +1,7 @@
 import './Deals.css';
 import DealsList from "./DealsList";
 import {useEffect, useState} from "react";
+import Pagination from "../Pagination";
 
 function DealsHome() {
 
@@ -25,6 +26,7 @@ function DealsHome() {
     return (
         <div className="container-fluid">
             <h2 className="text-secondary"> Deals Home Page</h2>
+            <Pagination/>
             <DealsList deals={deals}/>
         </div>
     );
