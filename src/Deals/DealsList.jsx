@@ -21,7 +21,7 @@ const DealsList = (props) => {
                             <div className="text-deal">
                                 <div className="d-flex w-100 justify-content-between">
                                     <h5 className="mb-1">{item.title}</h5>
-                                    <small>{msToDate(item.lastChange)}</small>
+                                    <small><i className="far fa-calendar-alt"/> {msToDate(item.lastChange)}</small>
                                 </div>
                                 <div className="d-flex w-100 justify-content-end">
                                     <span className="pvs">{parseFloatDecimals(item.salePrice, 2)}€</span>
@@ -34,7 +34,6 @@ const DealsList = (props) => {
                         </a>
                     ) : <h5>No deals to show</h5>
             }
-
         </div>
     );
 };
