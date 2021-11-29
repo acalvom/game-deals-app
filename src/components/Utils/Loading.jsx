@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import './Loading.css'
 
 const Loading = () => {
     return (

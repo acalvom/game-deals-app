@@ -19,9 +19,9 @@ const Pagination = (props) => {
 
     return (
         <div className="d-flex w-100 justify-content-between my-3">
-            <button type="button" className="btn btn-outline-primary" disabled={disable} onClick={prevPage}>Previous
+            <button type="button" className="btn btn-outline-secondary" disabled={disable} onClick={prevPage}>Previous
             </button>
-            <button type="button" className="btn btn-outline-primary" onClick={nextPage}>Next</button>
+            <button type="button" className="btn btn-outline-secondary" onClick={nextPage}>Next</button>
         </div>
     )
 

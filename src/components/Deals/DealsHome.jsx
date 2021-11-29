@@ -3,7 +3,6 @@ import DealsList from "./DealsList";
 import {useEffect, useState} from "react";
 import Pagination from "../Utils/Pagination";
 import Loading from "../Utils/Loading";
-import '../Utils/Loading.css'
 
 function DealsHome() {
 
@@ -31,7 +30,7 @@ function DealsHome() {
 
     return (
         <div className="container-fluid">
-            <h2 className="text-secondary"> Deals Home Page</h2>
+            <h2 className="page-header text-secondary"> List of Deals</h2>
             {isFetching && <Loading/>}
             {!isFetching && <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>}
             {!isFetching && <DealsList deals={deals}/>}
