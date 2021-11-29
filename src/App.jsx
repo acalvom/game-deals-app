@@ -1,4 +1,4 @@
-import DealsHome from "./Deals/DealsHome";
+import DealsHome from "./components/Deals/DealsHome";
 
 const App = () => {
     return (
