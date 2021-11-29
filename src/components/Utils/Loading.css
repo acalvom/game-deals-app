@@ -1,0 +1,13 @@
+.loading-spinner {
+    margin-top: 5em;
+    margin-bottom: 1em;
+}
+
+.loading-spinner .spinner-grow {
+    width: 6rem;
+    height: 6rem;
+}
+
+.loading-span > span {
+    font-size: 2rem;
+}

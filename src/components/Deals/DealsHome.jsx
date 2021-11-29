@@ -1,7 +1,9 @@
 import './Deals.css';
 import DealsList from "./DealsList";
 import {useEffect, useState} from "react";
-import Pagination from "../Pagination";
+import Pagination from "../Utils/Pagination";
+import Loading from "../Utils/Loading";
+import '../Utils/Loading.css'
 
 function DealsHome() {
 
@@ -25,12 +27,12 @@ function DealsHome() {
     }
     useEffect(() => {
         fetchDeals(API_DEALS).then();
-    }, [API_DEALS])
+    }, [API_DEALS]);
 
     return (
         <div className="container-fluid">
             <h2 className="text-secondary"> Deals Home Page</h2>
-            {isFetching && <div><h2>Fetching data...</h2></div>}
+            {isFetching && <Loading/>}
             {!isFetching && <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>}
             {!isFetching && <DealsList deals={deals}/>}
         </div>
