@@ -5,6 +5,9 @@ const DealsList = (props) => {
         let date = new Date(s * 1000);
         return date.toLocaleDateString("es");
     }
+    const parseFloatDecimals = (str, decimals = 0) => {
+        return parseFloat(str).toFixed(decimals)
+    }
 
     return (
         <div className="list-deals list-group">
@@ -21,9 +24,9 @@ const DealsList = (props) => {
                                     <small>{msToDate(item.lastChange)}</small>
                                 </div>
                                 <div className="d-flex w-100 justify-content-end">
-                                    <span className="pvs">{parseFloat(item.salePrice).toFixed(2)}€</span>
-                                    <span className="pvp">{parseFloat(item.normalPrice).toFixed(2)}€</span>
-                                    <span>{parseFloat(item.savings).toFixed(0)}%</span>
+                                    <span className="pvs">{parseFloatDecimals(item.salePrice, 2)}€</span>
+                                    <span className="pvp">{parseFloatDecimals(item.normalPrice, 2)}€</span>
+                                    <span>{parseFloatDecimals(item.savings)}%</span>
                                 </div>
                                 <p className="mb-1">{item.dealRating}/10.0 - {item.steamRatingText}</p>
                                 <small>Game release date: {msToDate(item.releaseDate)}</small>
