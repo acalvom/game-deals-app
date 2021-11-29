@@ -14,7 +14,7 @@ const DealsList = (props) => {
             {
                 deals.length > 0 ?
                     deals.map(item =>
-                        <a key={item.internalName} href="#" className="list-group-item list-group-item-action">
+                        <div key={item.dealID} className="list-group-item list-group-item-action">
                             <div className="img-deal d-none d-sm-block">
                                 <img src={item.thumb} className="img-fluid" alt={item.title}/>
                             </div>
@@ -32,7 +32,7 @@ const DealsList = (props) => {
                                     - {item.steamRatingText}</p>
                                 <small>Game release date: {msToDate(item.releaseDate)}</small>
                             </div>
-                        </a>
+                        </div>
                     ) : <h5>No deals to show</h5>
             }
         </div>

@@ -1,46 +1,26 @@
 import './Deals.css';
 import DealsList from "./DealsList";
+import {useEffect, useState} from "react";
 
 function DealsHome() {
 
-    const deals = [
-        {
-            internalName: "THEHUNTERCALLOFTHEWILD",
-            title: 'theHunter: Call of the Wild',
-            salePrice: "0.00",
-            normalPrice: "19.99",
-            savings: "100.000000",
-            steamRatingText: "Very Positive",
-            dealRating: "10.0",
-            releaseDate: 1487203200,
-            lastChange: 1637857401,
-            thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/518790/capsule_sm_120.jpg?t=1633535581"
-        },
-        {
-            internalName: "WARHAMMERENDTIMESVERMINTIDE",
-            title: "Warhammer: End Times - Vermintide",
-            salePrice: "0.00",
-            normalPrice: "29.99",
-            savings: "100.000000",
-            steamRatingText: "Very Positive",
-            dealRating: "10.0",
-            releaseDate: 1445558400,
-            lastChange: 1637856842,
-            thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/235540/capsule_sm_120.jpg?t=1596795745"
-        },
-        {
-            internalName: "RESIDENTEVIL5",
-            title: "Resident Evil 5",
-            salePrice: "4.25",
-            normalPrice: "19.99",
-            savings: "78.739370",
-            steamRatingText: "Very Positive",
-            dealRating: "8.8",
-            releaseDate: 1252972800,
-            lastChange: 1637746058,
-            thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/21690/capsule_sm_120.jpg?t=1591599188"
+    const API_DEALS = 'https://www.cheapshark.com/api/1.0/deals';
+    const [deals, setDeals] = useState([]);
+    const fetchDeals = async (url) => {
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            setDeals(data);
+            console.log(data);
+        } catch (e) {
+            console.log(e);
+        } finally {
+            console.log('End of request');
         }
-    ];
+    }
+    useEffect(() => {
+        fetchDeals(API_DEALS).then();
+    }, [])
 
     return (
         <div className="container-fluid">
