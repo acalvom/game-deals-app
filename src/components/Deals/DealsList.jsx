@@ -1,8 +1,8 @@
-import Swal from "sweetalert2";
-import {useEffect, useState} from "react";
+import StoresLogo from "../Stores/StoresLogo";
 
 const DealsList = (props) => {
     const deals = props.deals;
+    const stores = props.stores;
 
     const msToDate = (s) => {
         let date = new Date(s * 1000);
@@ -11,30 +11,6 @@ const DealsList = (props) => {
     const parseFloatDecimals = (str, decimals = 0) => {
         return parseFloat(str).toFixed(decimals)
     }
-
-    const [stores, setStores] = useState([]);
-    const API_STORES = `https://www.cheapshark.com/api/1.0/stores`;
-    const fetchStores = async () => {
-        try {
-            const res = await fetch(API_STORES);
-            const data = await res.json();
-            setStores(data)
-        } catch (error) {
-            await Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: error,
-            })
-        } finally {
-            console.log('End of stores request');
-        }
-    }
-
-    useEffect(() => {
-        fetchStores(API_STORES).then();
-    },[API_STORES]);
-
-    const BASE_API_URL = "https://www.cheapshark.com";
 
     return (
         <div className="list-deals list-group">
@@ -60,10 +36,8 @@ const DealsList = (props) => {
                                         <i className="fas fa-award"/> {parseFloatDecimals(item.steamRatingPercent)}/100
                                         - {item.steamRatingText}
                                     </p>
-                                    <img className="img-store" alt=""
-                                         src={stores.filter(it => it.storeID === item.storeID).map(it => BASE_API_URL + it.images.logo)}/>
+                                    <StoresLogo item={item} stores={stores}/>
                                 </div>
-
                                 <small>Game release date: {msToDate(item.releaseDate)}</small>
                             </div>
                         </div>
