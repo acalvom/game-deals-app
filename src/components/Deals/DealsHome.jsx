@@ -6,7 +6,9 @@ import Loading from "../Utils/Loading";
 import Swal from "sweetalert2";
 import DealsSearch from "./DealsSearch";
 
-function DealsHome() {
+function DealsHome(props) {
+
+    const stores = props.stores;
 
     const [deals, setDeals] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
@@ -51,7 +53,7 @@ function DealsHome() {
             {isFetching && <Loading/>}
             {!isFetching && <DealsSearch setTitle={setTitle} setPageNumber={setPageNumber}/>}
             {!isFetching && <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>}
-            {!isFetching && <DealsList deals={deals}/>}
+            {!isFetching && <DealsList deals={deals} stores={stores}/>}
         </div>
     );
 }
