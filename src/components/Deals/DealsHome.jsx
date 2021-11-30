@@ -12,8 +12,9 @@ function DealsHome() {
     const [pageNumber, setPageNumber] = useState(0);
     const [isFetching, setIsFetching] = useState(true);
     const [title, setTitle] = useState('');
-    const API_DEALS = `https://www.cheapshark.com/api/1.0/deals?pageNumber=${pageNumber}`;
-    const API_SEARCH_DEAL = `https://www.cheapshark.com/api/1.0/deals?pageNumber=${pageNumber}&title=${title}&exact=0`;
+
+    const API_DEALS = `https://www.cheapshark.com/api/1.0/deals?onSale=1&pageNumber=${pageNumber}`;
+    const API_SEARCH_DEAL = `https://www.cheapshark.com/api/1.0/deals?&pageNumber=${pageNumber}&title=${title}&exact=0&onSale=1`;
 
     const fetchDeals = async (url) => {
         try {
@@ -33,14 +34,23 @@ function DealsHome() {
         }
     }
     useEffect(() => {
-        fetchDeals(API_DEALS).then();
-    }, [API_DEALS]);
+        if (!title) {
+            fetchDeals(API_DEALS).then();
+        }
+
+    }, [API_DEALS, title]);
+
+    useEffect(() => {
+        if (title) {
+            fetchDeals(API_SEARCH_DEAL).then();
+        }
+    }, [API_SEARCH_DEAL, title]);
 
     return (
         <div className="container-fluid">
             <h2 className="page-header text-secondary"> List of Deals</h2>
             {isFetching && <Loading/>}
-            {!isFetching && <DealsSearch/>}
+            {!isFetching && <DealsSearch setTitle={setTitle} setPageNumber={setPageNumber}/>}
             {!isFetching && <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>}
             {!isFetching && <DealsList deals={deals}/>}
         </div>
