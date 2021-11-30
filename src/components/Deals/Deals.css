@@ -3,14 +3,13 @@
     justify-content: center;
     font-size: 3rem;
     color: #0B3948;
-    text-shadow:
-            1px 0 1px #ccc, 0 1px 1px #eee,
-            2px 1px 1px #ccc, 1px 2px 1px #eee,
-            3px 2px 1px #ccc, 2px 3px 1px #eee,
-            4px 3px 1px #ccc, 3px 4px 1px #eee,
-            5px 4px 1px #ccc, 4px 5px 1px #eee,
-            6px 5px 1px #ccc, 5px 6px 1px #eee,
-            7px 6px 1px #ccc;
+    text-shadow: 1px 0 1px #ccc, 0 1px 1px #eee,
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
 
 }
 
@@ -49,6 +48,12 @@
 
 .list-deals .text-deal span.pvs {
     color: red;
+}
+
+.list-deals .text-deal .img-store {
+    padding: 0.5em;
+    width: 50px;
+    height: auto;
 }
 
 @media (max-width: 576px) {

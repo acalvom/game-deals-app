@@ -37,7 +37,6 @@ function DealsHome() {
         if (!title) {
             fetchDeals(API_DEALS).then();
         }
-
     }, [API_DEALS, title]);
 
     useEffect(() => {
