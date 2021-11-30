@@ -4,15 +4,16 @@ import {useEffect, useState} from "react";
 import Pagination from "../Utils/Pagination";
 import Loading from "../Utils/Loading";
 import Swal from "sweetalert2";
+import DealsSearch from "./DealsSearch";
 
 function DealsHome() {
 
     const [deals, setDeals] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
     const [isFetching, setIsFetching] = useState(true);
-    // const [title, setTitle] = useState('');
+    const [title, setTitle] = useState('');
     const API_DEALS = `https://www.cheapshark.com/api/1.0/deals?pageNumber=${pageNumber}`;
-    // const API_SEARCH_DEAL = `https://www.cheapshark.com/api/1.0/deals?pageNumber=${pageNumber}&title=${title}&exact=0`;
+    const API_SEARCH_DEAL = `https://www.cheapshark.com/api/1.0/deals?pageNumber=${pageNumber}&title=${title}&exact=0`;
 
     const fetchDeals = async (url) => {
         try {
@@ -39,6 +40,7 @@ function DealsHome() {
         <div className="container-fluid">
             <h2 className="page-header text-secondary"> List of Deals</h2>
             {isFetching && <Loading/>}
+            {!isFetching && <DealsSearch/>}
             {!isFetching && <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>}
             {!isFetching && <DealsList deals={deals}/>}
         </div>
