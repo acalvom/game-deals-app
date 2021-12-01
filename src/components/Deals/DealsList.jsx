@@ -26,19 +26,21 @@ const DealsList = (props) => {
                                     <h5 className="mb-1">{item.title}</h5>
                                     <small><i className="far fa-calendar-alt"/> {msToDate(item.lastChange)}</small>
                                 </div>
-                                <div className="d-flex w-100 justify-content-end">
+                                <div className="store-deal d-flex w-100 justify-content-end">
                                     <span className="pvs">{parseFloatDecimals(item.salePrice, 2)}€</span>
                                     <span className="pvp">{parseFloatDecimals(item.normalPrice, 2)}€</span>
                                     <span>{parseFloatDecimals(item.savings)}%</span>
+                                    <StoresLogo item={item} stores={stores}/>
                                 </div>
                                 <div className="d-flex w-100 justify-content-between">
                                     <p className="mb-1">
                                         <i className="fas fa-award"/> {parseFloatDecimals(item.steamRatingPercent)}/100
                                         - {item.steamRatingText}
                                     </p>
-                                    <StoresLogo item={item} stores={stores}/>
+
                                 </div>
-                                <small>Game release date: {msToDate(item.releaseDate)}</small>
+                                {(item.releaseDate !== 0) &&
+                                <small>Game release date: {msToDate(item.releaseDate)}</small>}
                             </div>
                         </div>
                     ) : <h5>No deals to show</h5>

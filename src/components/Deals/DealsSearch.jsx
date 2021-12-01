@@ -25,8 +25,8 @@ const DealsSearch = (props) => {
                 <input type="text" className="form-control" id="gameTitleInput"
                        placeholder="Type a title to search deals..." value={gameTitle}
                        onChange={(evt) => setGameTitle(evt.target.value)}/>
-                <button className="btn btn-secondary mx-1" type="submit"><span className="fa fa-search"/></button>
-                <button className="btn btn-secondary mx-1" type="reset"><span className="fa fa-undo-alt"/></button>
+                <button className="btn-search btn mx-1" type="submit"><span className="fa fa-search"/></button>
+                <button className="btn-search btn mx-1" type="reset"><span className="fa fa-undo-alt"/></button>
             </div>
         </form>
     );
