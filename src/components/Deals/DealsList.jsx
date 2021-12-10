@@ -1,4 +1,5 @@
 import StoresLogo from "../Stores/StoresLogo";
+import {Link} from "react-router-dom";
 
 const DealsList = (props) => {
     const deals = props.deals;
@@ -17,7 +18,7 @@ const DealsList = (props) => {
             {
                 deals.length > 0 ?
                     deals.map(item =>
-                        <div key={item.dealID} className="list-group-item list-group-item-action">
+                        <Link to={`/gameDetail/${item.gameID}`} key={item.dealID} className="list-group-item list-group-item-action">
                             <div className="img-deal d-none d-sm-block">
                                 <img src={item.thumb} className="img-fluid" alt={item.title}/>
                             </div>
@@ -42,7 +43,7 @@ const DealsList = (props) => {
                                 {(item.releaseDate !== 0) &&
                                 <small>Game release date: {msToDate(item.releaseDate)}</small>}
                             </div>
-                        </div>
+                        </Link>
                     ) : <h5>No deals to show</h5>
             }
         </div>
