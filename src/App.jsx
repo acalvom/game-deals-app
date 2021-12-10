@@ -1,18 +1,10 @@
 import DealsHome from "./components/Deals/DealsHome";
-import fetchStores from "./components/Stores/StoresService";
-import {useEffect, useState} from "react";
+import {useFetch} from "./hooks/useFetch";
 
 const App = () => {
 
-    const [stores, setStores] = useState([]);
-
-    useEffect(() => {
-        const getStores = async () => {
-            const data = await fetchStores();
-            setStores(data)
-        }
-        getStores().then();
-    }, []);
+    const API_STORES = "https://www.cheapshark.com/api/1.0/stores";
+    const {data: stores} = useFetch(API_STORES);
 
     return (
         <div className="container mt-5">
