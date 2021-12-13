@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     font-size: 3rem;
-    color: #416165;
-    text-shadow: 1px 0 1px #ccc, 0 1px 1px #eee,
-    2px 1px 1px #ccc, 1px 2px 1px #eee,
-    3px 2px 1px #ccc, 2px 3px 1px #eee,
-    4px 3px 1px #ccc, 3px 4px 1px #eee,
-    5px 4px 1px #ccc, 4px 5px 1px #eee,
-    6px 5px 1px #ccc, 5px 6px 1px #eee,
-    7px 6px 1px #ccc;
+    color: #ffd60a;
+    text-shadow: 1px 0 1px #e59500, 0 1px 1px #e59500,
+    2px 1px 1px #e59500, 1px 2px 1px #e59500,
+    3px 2px 1px #e59500, 2px 3px 1px #e59500,
+    4px 3px 1px #e59500, 3px 4px 1px #e59500,
+    5px 4px 1px #e59500, 4px 5px 1px #e59500,
+    6px 5px 1px #e59500, 5px 6px 1px #e59500,
+    7px 6px 1px #e59500;
 
 }
 
@@ -18,7 +18,8 @@
     margin-bottom: 1em;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 10px;
-    background-color: rgba(65, 97, 101, 0.2)
+    background-color: #065cac;
+    color: #ffc300;
 }
 
 .list-deals .img-deal {
@@ -34,11 +35,17 @@
 .list-deals .text-deal {
     flex: 1;
     padding: 1em;
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: 1px solid;
 }
 
 .list-deals .text-deal span {
     padding: 0 0 0 1em;
+}
+
+.list-deals .text-deal h5 {
+    color: #edf2f4;
+    text-transform: uppercase;
+    font-weight: lighter;
 }
 
 .list-deals .text-deal span.pvp {
@@ -62,8 +69,8 @@
 }
 
 .btn-search {
-    background-color: #0B3948;
-    color: #ffffff;
+    background-color: #ffd60a;
+    color: #001d3d;
 }
 
 @media (max-width: 576px) {

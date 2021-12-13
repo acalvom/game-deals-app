@@ -49,7 +49,7 @@ function DealsHome(props) {
 
     return (
         <div className="container-fluid">
-            <h2 className="page-header text-secondary"> List of Deals</h2>
+            <h2 className="page-header"> DEALS</h2>
             {isFetching && <Loading/>}
             {!isFetching && <DealsSearch setTitle={setTitle} setPageNumber={setPageNumber}/>}
             {!isFetching && <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>}

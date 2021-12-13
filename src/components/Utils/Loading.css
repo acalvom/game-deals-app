@@ -6,9 +6,11 @@
 .loading-spinner .spinner-grow {
     width: 6rem;
     height: 6rem;
+    color: #dc3545;
 }
 
 .loading-span > span {
     font-size: 2rem;
-    color: #0B3948;
+    font-weight: lighter;
+    color: #ffc300;
 }

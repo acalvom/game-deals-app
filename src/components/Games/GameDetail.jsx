@@ -10,7 +10,7 @@ const GameDetail = () => {
     console.log(game)
     return (
         <div className="container-fluid">
-            <h2 className="page-header text-secondary"> Game Detail id {gameID}</h2>
+            <h2 className="page-header"> Game Detail id {gameID}</h2>
             {isFetching && <Loading/>}
         </div>
     );
